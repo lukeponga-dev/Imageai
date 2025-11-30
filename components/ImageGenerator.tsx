@@ -48,6 +48,17 @@ const ImageGenerator: React.FC = () => {
     }
   }, [prompt, aspectRatio, imageSize]);
 
+  const handleDownloadImage = useCallback(() => {
+    if (generatedImage) {
+      const link = document.createElement('a');
+      link.href = generatedImage;
+      link.download = 'generated-image.png'; // You can make this dynamic if needed
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  }, [generatedImage]);
+
   return (
     <div className="flex flex-col h-full bg-white dark:bg-gray-800 rounded-lg shadow-xl p-6 max-w-4xl mx-auto space-y-6">
       <h2 className="text-2xl font-bold text-center text-indigo-600 dark:text-indigo-400">
@@ -136,8 +147,15 @@ const ImageGenerator: React.FC = () => {
           <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 p-4 border-b dark:border-gray-700">
             Generated Image
           </h3>
-          <div className="flex justify-center items-center p-4 bg-gray-100 dark:bg-gray-900">
+          <div className="flex flex-col items-center p-4 bg-gray-100 dark:bg-gray-900 space-y-4">
             <img src={generatedImage} alt="Generated" className="max-w-full h-auto rounded-md shadow-lg" />
+            <button
+              onClick={handleDownloadImage}
+              className="px-6 py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800"
+              title="Download the generated image."
+            >
+              Download Image
+            </button>
           </div>
         </div>
       )}
