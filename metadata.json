@@ -1,0 +1,5 @@
+{
+  "name": "AI Image Enhancer",
+  "description": "An AI-powered web application that allows users to chat with Gemini, generate images with customizable sizes and aspect ratios, and analyze uploaded photos for insights.",
+  "requestFramePermissions": []
+}
