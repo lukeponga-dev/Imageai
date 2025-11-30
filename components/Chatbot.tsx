@@ -134,7 +134,7 @@ const Chatbot: React.FC = () => {
         />
         <button
           type="submit"
-          className="px-6 py-3 bg-indigo-600 text-white rounded-r-lg font-medium hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="px-6 py-3 bg-indigo-600 text-white rounded-r-lg font-medium hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-900 disabled:opacity-50 disabled:cursor-not-allowed"
           disabled={isLoading || inputMessage.trim() === ''}
           title="Send your message to Gemini."
         >
